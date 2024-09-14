@@ -58,4 +58,4 @@ app.use('/api/member', restrictProjectMiddleware, memberRoute)
 app.use('/api/comment', restrictProjectMiddleware, commentRoute)
 
 
-app.listen(80)
+app.listen(process.env.PORT)
