@@ -41,6 +41,6 @@ const updateOrder = async ({ id, order, type, model }) => {
 
 const badRequest = (res) => res.status(400).json({ message: 'Whoop! Looks like your http request is missing something.' }).end()
 
-const cookieConfig = { path : '/',domain : "jira-clone-aws",maxAge: 60 * 60 * 24 * 15,httpOnly: true , secure : false , sameSite : "lax"}
+const cookieConfig = { path : '/',domain : "compute.amazonaws.com",maxAge: 60 * 60 * 24 * 15,httpOnly: true , secure : false , sameSite : "lax"}
 
 module.exports = { sameContainerReorder, diffContainerReorder, badRequest, cookieConfig }
