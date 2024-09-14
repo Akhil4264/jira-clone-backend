@@ -79,8 +79,5 @@ const generateJwt = (payload) => jwt.sign(payload, process.env.JWT_ACCESS_TOKEN_
 const findUser = async (email) => client.user.findFirst({ where: { email } })
 
 function createCookie(res, token) {
-	res.cookie('jira-clone', JSON.stringify({ token }), {
-		expires: new Date(Date.now() + 1296000000), // 15 days
-		...cookieConfig,
-	})
+	res.cookie('jira-clone', JSON.stringify({ token }), {...cookieConfig})
 }
