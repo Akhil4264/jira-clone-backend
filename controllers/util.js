@@ -41,6 +41,6 @@ const updateOrder = async ({ id, order, type, model }) => {
 
 const badRequest = (res) => res.status(400).json({ message: 'Whoop! Looks like your http request is missing something.' }).end()
 
-const cookieConfig = { path: '/', domain: process.env.COOKIE_DOMAIN, httpOnly: true, sameSite: "none", secure: false }
+const cookieConfig = { path: '/', httpOnly: true, sameSite: "none", secure: false }
 
 module.exports = { sameContainerReorder, diffContainerReorder, badRequest, cookieConfig }
