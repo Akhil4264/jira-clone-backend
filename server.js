@@ -22,6 +22,7 @@ const { restrictProjectMiddleware } = require('./utils/restrictProjectMiddleware
 const corOptions = {
 	credentials: true,
 	origin: "http://ec2-35-154-2-29.ap-south-1.compute.amazonaws.com",
+	methods: ["GET", "POST", "PUT", "DELETE"],
 }
 
 app.use(cors(corOptions))
