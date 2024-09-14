@@ -1,5 +1,6 @@
 const { PrismaClient } = require('@prisma/client')
 const client = new PrismaClient()
+require('dotenv').config()
 
 const sameContainerReorder = async ({ id, order, newOrder }, whereConfig, model) => {
 	const ste = newOrder > order // whether it shifts further from start
@@ -40,6 +41,6 @@ const updateOrder = async ({ id, order, type, model }) => {
 
 const badRequest = (res) => res.status(400).json({ message: 'Whoop! Looks like your http request is missing something.' }).end()
 
-const cookieConfig = { httpOnly: true, secure: false, sameSite: 'none' }
+const cookieConfig = { path: '/', domain: process.env.COOKIE_DOMAIN, httpOnly: true, sameSite: "none", secure: true }
 
 module.exports = { sameContainerReorder, diffContainerReorder, badRequest, cookieConfig }
