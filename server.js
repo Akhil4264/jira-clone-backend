@@ -22,7 +22,7 @@ const { restrictProjectMiddleware } = require('./utils/restrictProjectMiddleware
 const corOptions = {
 	credentials: true,
 	origin: true,
-	methods: ["GET", "POST", "PUT", "DELETE"],
+	methods: ["GET", "POST", "PUT", "DELETE","PATCH"],
 }
 
 app.use(cors(corOptions))
